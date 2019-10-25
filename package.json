@@ -1,0 +1,23 @@
+{
+  "name": "@dxdeveloperexperience/adoc-codelab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "adoc-codelab": "./cli.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "asciidoctor": "^2.0.3",
+    "bower": "^1.8.8",
+    "jsdom": "^15.2.0",
+    "mustache": "^3.1.0",
+    "ncp": "^2.0.0",
+    "rimraf": "^3.0.0"
+  }
+}

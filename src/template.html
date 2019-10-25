@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="theme-color" content="#4F7DC9" />
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="/elements/codelab.html" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono"
+    />
+    <style is="custom-style">
+      body {
+        font-family: "Roboto", sans-serif;
+        background: var(--google-codelab-background, #f8f9fa);
+      }
+    </style>
+  </head>
+  <body unresolved class="fullbleed">
+    <google-codelab title="{{ title }}" environment="web">
+      {{ &content }}
+    </google-codelab>
+  </body>
+</html>

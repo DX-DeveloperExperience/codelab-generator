@@ -1,0 +1,20 @@
+= Codelab
+
+== Step1
+
+* liste 1
+* 2
+* 3
+
+[source,javascript]
+----
+function test(){
+    console.log('Bastien')
+}
+----
+
+blabla
+
+== Step 2
+
+blabli
