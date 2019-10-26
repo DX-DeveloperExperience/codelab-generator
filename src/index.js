@@ -6,8 +6,9 @@ module.exports = function(input, target) {
   const path = require("path");
 
   const body = fs.readFileSync(input);
-  const content = asciidoctor.convert(body);
-
+  const content = asciidoctor.convert(body, {
+    attributes: { showtitle: true }
+  });
   const dom = new JSDOM(content);
   let steps = [];
 
@@ -30,26 +31,33 @@ module.exports = function(input, target) {
 
   const html = Mustache.render(template, {
     content: steps.join("\n"),
-    title: "bouh"
+    title: dom.window.document.querySelector("h1").innerHTML
   });
 
   const rimraf = require("rimraf");
-  const ncp = require("ncp").ncp;
 
   const utils = require("util");
   const rimraf$ = utils.promisify(rimraf);
   const mkdir$ = utils.promisify(fs.mkdir);
-  const ncp$ = utils.promisify(ncp);
+  const git$ = require("simple-git/promise");
 
-  rimraf$(target)
-    .then(() => {
-      return mkdir$(target);
-    })
-    .then(() => {
-      return ncp$(path.resolve(__dirname, "../lab"), target);
-    })
-    .then(() => {
-      return fs.writeFileSync(target + "/index.html", html);
-    })
-    .catch(err => console.error(err));
+  const p = fs.existsSync(target)
+    ? Promise.resolve()
+    : rimraf$(target)
+        .then(() => {
+          return mkdir$(target);
+        })
+        .then(() => {
+          console.log("downloading template");
+          return git$()
+            .silent(true)
+            .clone(
+              "https://github.com/DX-DeveloperExperience/adoc-codelab-template",
+              target
+            );
+        });
+
+  p.then(() => {
+    return fs.writeFileSync(target + "/index.html", html);
+  }).catch(err => console.error(err));
 };
