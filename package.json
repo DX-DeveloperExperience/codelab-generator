@@ -1,6 +1,6 @@
 {
   "name": "@dxdeveloperexperience/adoc-codelab",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "",
   "main": "src/index.js",
   "dependencies": {
@@ -10,7 +10,9 @@
     "rimraf": "^3.0.0",
     "simple-git": "^1.126.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
   "scripts": {
     "test": "jest"
   },
