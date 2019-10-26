@@ -1,6 +1,6 @@
-name: Test
+name: Test and Publish
 on:
-  pull_request:
+  push:
     branches:
       - master
 
