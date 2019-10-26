@@ -10,29 +10,13 @@ module.exports = function(input, target) {
     attributes: { showtitle: true }
   });
   const dom = new JSDOM(content);
-  let steps = [];
-
-  const sections = dom.window.document.querySelectorAll(".sect1");
-
-  for (let i = 0; i < sections.length; i++) {
-    const title = sections[i].querySelector("h2").innerHTML;
-    const body = sections[i].querySelector(".sectionbody").innerHTML;
-    steps.push(`
-      <google-codelab-step label="${title}" duration="0">
-      ${body}
-      </google-codelab-step>
-      `);
-  }
 
   const template = fs.readFileSync(
     path.resolve(__dirname, "./template.html"),
     "utf8"
   );
 
-  const html = Mustache.render(template, {
-    content: steps.join("\n"),
-    title: dom.window.document.querySelector("h1").innerHTML
-  });
+  const html = Mustache.render(template, require("./convert")(dom));
 
   const rimraf = require("rimraf");
 
