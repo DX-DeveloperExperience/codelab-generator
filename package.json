@@ -1,6 +1,6 @@
 {
-  "name": "@dxdeveloperexperience/adoc-codelab",
-  "version": "1.0.6",
+  "name": "@dxdeveloperexperience/codelab-generator",
+  "version": "1.0.7",
   "description": "",
   "main": "src/index.js",
   "dependencies": {
@@ -8,10 +8,11 @@
     "jsdom": "^15.2.0",
     "mustache": "^3.1.0",
     "rimraf": "^3.0.0",
+    "showdown": "^1.9.0",
     "simple-git": "^1.126.0"
   },
   "devDependencies": {
-    "jest": "^24.9.0"
+    "jest": "24.9.0"
   },
   "scripts": {
     "test": "jest"

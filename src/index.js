@@ -1,22 +1,7 @@
 module.exports = function(input, target) {
-  const asciidoctor = require("asciidoctor")();
   const fs = require("fs");
-  const Mustache = require("mustache");
-  const { JSDOM } = require("jsdom");
-  const path = require("path");
 
-  const body = fs.readFileSync(input);
-  const content = asciidoctor.convert(body, {
-    attributes: { showtitle: true }
-  });
-  const dom = new JSDOM(content);
-
-  const template = fs.readFileSync(
-    path.resolve(__dirname, "./template.html"),
-    "utf8"
-  );
-
-  const html = Mustache.render(template, require("./convert")(dom));
+  const html = require("./convert")(input);
 
   const rimraf = require("rimraf");
 
