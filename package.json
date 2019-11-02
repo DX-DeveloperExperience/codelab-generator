@@ -6,14 +6,13 @@
   "dependencies": {
     "asciidoctor": "^2.0.3",
     "jsdom": "^15.2.0",
-    "markdown": "^0.5.0",
     "mustache": "^3.1.0",
     "rimraf": "^3.0.0",
     "showdown": "^1.9.0",
     "simple-git": "^1.126.0"
   },
   "devDependencies": {
-    "jest": "^24.9.0"
+    "jest": "24.9.0"
   },
   "scripts": {
     "test": "jest"
