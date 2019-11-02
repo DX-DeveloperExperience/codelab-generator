@@ -1,0 +1,21 @@
+# Codelab
+
+## Step1
+
+This is the first step of this codelab. You should do :
+
+- Do that
+- Do this
+- And finish with this other thing
+
+```javascript
+function test() {
+  console.log("JavaScript Snippet");
+}
+```
+
+Congrats. You finish the first step
+
+## Step 2
+
+This is the second step of this codelab.
