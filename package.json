@@ -6,7 +6,7 @@
   "dependencies": {
     "asciidoctor": "^2.0.3",
     "jsdom": "^15.2.0",
-    "mustache": "^3.1.0",
+    "mustache": "^4.0.0",
     "rimraf": "^3.0.0",
     "showdown": "^1.9.0",
     "simple-git": "^1.126.0"
