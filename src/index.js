@@ -29,4 +29,5 @@ module.exports = function(input, target) {
   p.then(() => {
     return fs.writeFileSync(target + "/index.html", html);
   }).catch(err => console.error(err));
+  return p;
 };
