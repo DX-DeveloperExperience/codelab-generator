@@ -1,6 +1,6 @@
 const { JSDOM } = require("jsdom");
 
-module.exports = function(body) {
+module.exports = function(body, config) {
   const asciidoctor = require("asciidoctor")();
   const content = asciidoctor.convert(body, {
     attributes: { showtitle: true }
@@ -22,6 +22,7 @@ module.exports = function(body) {
   }
 
   return (data = {
+    ...config,
     content: steps.join("\n"),
     title: dom.window.document.querySelector("h1").innerHTML
   });
