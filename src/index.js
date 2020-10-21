@@ -1,7 +1,7 @@
-module.exports = function(input, target) {
+module.exports = function (input, target, config) {
   const fs = require("fs");
 
-  const html = require("./convert")(input);
+  const html = require("./convert")(input, config);
 
   const rimraf = require("rimraf");
 
@@ -17,7 +17,6 @@ module.exports = function(input, target) {
           return mkdir$(target);
         })
         .then(() => {
-          console.log("downloading template");
           return git$()
             .silent(true)
             .clone(
@@ -28,6 +27,6 @@ module.exports = function(input, target) {
 
   p.then(() => {
     return fs.writeFileSync(target + "/index.html", html);
-  }).catch(err => console.error(err));
+  }).catch((err) => console.error(err));
   return p;
 };

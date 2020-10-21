@@ -1,4 +1,4 @@
-module.exports = function(input) {
+module.exports = function(input, config) {
   const fs = require("fs");
   const path = require("path");
   const Mustache = require("mustache");
@@ -13,5 +13,5 @@ module.exports = function(input) {
   const convert = input.endsWith(".adoc")
     ? require("./converter/adoc")
     : require("./converter/markdown");
-  return Mustache.render(template, convert(body));
+  return Mustache.render(template, convert(body, config));
 };

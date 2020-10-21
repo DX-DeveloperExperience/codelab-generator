@@ -1,6 +1,6 @@
 const { JSDOM } = require("jsdom");
 
-module.exports = function(body) {
+module.exports = function (body, config) {
   const showdown = require("showdown"),
     converter = new showdown.Converter();
   const content = converter.makeHtml(body.toString());
@@ -31,7 +31,8 @@ module.exports = function(body) {
   }
 
   return {
+    ...config,
     content: steps.join("\n"),
-    title: dom.window.document.querySelector("h1").innerHTML
+    title: dom.window.document.querySelector("h1").innerHTML,
   };
 };
