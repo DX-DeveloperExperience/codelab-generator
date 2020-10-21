@@ -1,8 +1,11 @@
 {
   "name": "@dxdeveloperexperience/codelab-generator",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "asciidoctor": "^2.0.3",
     "jsdom": "^15.2.0",
@@ -13,9 +16,6 @@
   },
   "devDependencies": {
     "jest": "24.9.0"
-  },
-  "scripts": {
-    "test": "jest"
   },
   "repository": {
     "type": "git",
