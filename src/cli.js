@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const path = require("path");
+const fs = require("fs");
 const [, , ...args] = process.argv;
 let config = {};
 
@@ -12,7 +13,7 @@ if (args.length < 2) {
 }
 
 if (args.length === 3) {
-  const configPath = path.resolve(process.cwd(), args[3]);
+  const configPath = path.resolve(process.cwd(), args[2]);
 
   try {
     config = JSON.parse(fs.readFileSync(configPath, "utf8"));
