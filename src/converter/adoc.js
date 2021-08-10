@@ -12,7 +12,11 @@ module.exports = function(body, config) {
   const sections = dom.window.document.querySelectorAll(".sect1");
 
   for (let i = 0; i < sections.length; i++) {
-    const title = sections[i].querySelector("h2").innerHTML;
+    const titleElement = sections[i].querySelector("h2");
+    if(!titleElement){
+      console.error("Make sure each section of your codelab have a dedicated title");
+    }
+    const title = titleElement.innerHTML;
     const body = sections[i].querySelector(".sectionbody").innerHTML;
     steps.push(`
         <google-codelab-step label="${title}" duration="0">
@@ -21,9 +25,14 @@ module.exports = function(body, config) {
         `);
   }
 
+  const mainTitle = dom.window.document.querySelector("h1");
+  if(!mainTitle){
+    console.error("Make sure that your codelab have a level 1 heading");
+  }
+
   return (data = {
     ...config,
     content: steps.join("\n"),
-    title: dom.window.document.querySelector("h1").innerHTML
+    title: mainTitle.innerHTML
   });
 };
