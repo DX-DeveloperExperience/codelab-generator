@@ -9,7 +9,7 @@
     "mustache": "^3.1.0",
     "rimraf": "^3.0.0",
     "showdown": "^1.9.0",
-    "simple-git": "^1.126.0"
+    "simple-git": "^3.5.0"
   },
   "devDependencies": {
     "jest": "24.9.0"
