@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "dependencies": {
-    "asciidoctor": "^2.0.3",
+    "asciidoctor": "^3.0.0",
     "jsdom": "^15.2.0",
     "mustache": "^3.1.0",
     "rimraf": "^3.0.0",
