@@ -12,7 +12,7 @@
     "simple-git": "^1.126.0"
   },
   "devDependencies": {
-    "jest": "24.9.0"
+    "jest": "29.6.4"
   },
   "scripts": {
     "test": "jest"
